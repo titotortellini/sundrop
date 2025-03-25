@@ -35,7 +35,7 @@ function CharacterSheet() {
       }
     };
     getClasses();
-  }, []);
+  }, [handleError]);
 
   const handleChangeClass = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedClass = event.target.value;
