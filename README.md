@@ -4,6 +4,15 @@ This app leverages the [D&D 5e SRD API](https://5e-bits.github.io/docs/) to allo
 
 Currently, the app pulls in data for character classes, and depending on which class is selected, pulls in subclass options which can then be selected.
 
+## Running the app locally
+
+```
+npm i
+npm run dev
+```
+
+================
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
