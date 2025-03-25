@@ -7,6 +7,7 @@ import {
   fetchClasses,
 } from "../api/characterResourcesService";
 import { Character } from "../interfaces/character";
+import { useError } from "../hooks/useError";
 
 function CharacterSheet() {
   const [characterData, setCharacterData] = useState<Character>({
@@ -14,7 +15,8 @@ function CharacterSheet() {
     class: "",
     subclass: "",
   });
-  const [error, setError] = useState<string | null>(null);
+  //   const [error, setError] = useState<string | null>(null);
+  const { error, handleError } = useError();
 
   const [charClasses, setCharClasses] = useState([]);
   const [charSubclasses, setCharSubclasses] = useState([]);
@@ -29,11 +31,7 @@ function CharacterSheet() {
         const data = await fetchClasses();
         setCharClasses(data.results);
       } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
+        handleError(err);
       }
     };
     getClasses();
@@ -47,11 +45,7 @@ function CharacterSheet() {
         const data = await fetchAvailableSubclasses(selectedClass);
         setCharSubclasses(data.results);
       } catch (err) {
-        if (err instanceof Error) {
-          setError(err.message);
-        } else {
-          setError("An unknown error occurred");
-        }
+        handleError(err);
       }
     })();
   };
