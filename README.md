@@ -1,6 +1,6 @@
 # D&D Character Creator
 
-This app leverages the (D&D 5e SRD API)[https://5e-bits.github.io/docs/] to allow users to create characters for Dungeons and Dragons.
+This app leverages the [D&D 5e SRD API](https://5e-bits.github.io/docs/) to allow users to create characters for Dungeons and Dragons.
 
 Currently, the app pulls in data for character classes, and depending on which class is selected, pulls in subclass options which can then be selected.
 
